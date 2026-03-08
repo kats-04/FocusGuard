@@ -4,6 +4,12 @@
   "version": "1.1.0",
   "description": "Enforces local focus policies with a UI toggle.",
   "permissions": ["storage"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "focusguard@shivanjali.dev",
+      "strict_min_version": "109.0"
+    }
+  },
   "action": {
     "default_popup": "popup.html",
     "default_title": "Focus Settings"
@@ -14,5 +20,8 @@
       "js": ["content.js"],
       "run_at": "document_idle"
     }
-  ]
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
 }
